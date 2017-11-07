@@ -1,0 +1,34 @@
+<section *ngIf="poll" id="poll-details">
+    <h2>"{{poll.title}}" poll details!</h2>
+    <div class="btn-back-cont">
+        <button type="button" class="btn btn-outline-secondary btn-back" (click)="goBack()">Back</button>
+    </div>
+    <div>
+        <google-chart class="center" [data]="pieChartOptions"></google-chart>
+    </div>
+
+    <div class="display-votes">
+        <div *ngFor="let option of poll.options" class="votes" >
+            <label class="form-check-label">
+                <!-- "[(ngModel)]" con i 'radio buttons' ritorna il valore che abbiamo assegnato a 'value' perciò trasformerà ogni proprietà assegnatagli (selOption) in quel valore -->
+                <input class="form-check-input" name="group" type="radio" value="{{option.name}}" [(ngModel)]="selOption" />
+                {{option.name}}
+            </label>
+            <li>Votes: <strong>{{option.votes}}</strong></li>
+        </div>
+    </div>
+    <div class="btn-cont">
+        <button class="btn btn-success" (click)="save()">Submit</button>
+        <a
+           href="https://twitter.com/share"
+           target="_blank"
+           data-size="large"
+           data-text="custom share text"
+           data-url="https://dev.twitter.com/web/tweet-button"
+           data-hashtags="example,demo"
+           data-via="twitterdev"
+           data-related="twitterapi,twitter">
+            <button class="btn btn-primary">Tweet</button>
+        </a>
+    </div>
+</section>

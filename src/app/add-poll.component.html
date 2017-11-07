@@ -1,0 +1,52 @@
+<h1 class="http-error" *ngIf="errMsg">{{errMsg}}</h1>
+<section *ngIf="!errMsg">
+    <h2>Welcome, {{username}}!</h2>
+    <div class="row justify-content-around" id="profile-btn-cont">
+        <button class="btn btn-lg" routerLink="/edit">Edit Profile</button>
+        <button class="btn btn-lg btn-primary" routerLink="/mypolls">My Polls</button>
+    </div>
+    <h1>Add Poll</h1>
+    <form [formGroup]="addPollForm" (ngSubmit)="addPoll(addPollForm.value)">
+        <h3>Poll Name</h3>
+        <div class="form-group row justify-content-center">
+            <div class="col-8">
+                <input class="form-control" type="text" id="example-text-input" autocomplete="off" formControlName="title">
+                <div class="error" *ngIf="formErrors.title">{{formErrors.title}}</div>
+            </div>
+        </div>
+        <h3>Options</h3>
+        <div class="form-group row justify-content-center" formArrayName="options">
+            <!-- -->
+            <div class="col-8" *ngFor="let newOption of options.controls; let i=index">
+                <input class="form-control option-group" type="text" id="example-text-input" autocomplete="off" [formControlName]="i">
+            </div>
+        </div>
+        <div class="row justify-content-center" id="options-error">
+            <div class="error col-8" *ngIf="formErrors.options">{{formErrors.options}}</div>
+        </div>
+        <div class="row justify-content-center" id="btn-cont">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-3 center">
+                        <button class="btn btn-primary" (click)="reset($event)">Reset</button>
+                    </div>
+                    <div class="col-3 center">
+                        <button class="btn" (click)="addOption($event)">More Options</button>
+                    </div>
+                    <div class="col-3 center">
+                        <button class="btn" *ngIf="options.length > 2" (click)="removeOption($event)">Less Options</button>
+                    </div>
+                    <div class="col-3 center">
+                        <button type="submit" class="btn btn-success" [disabled]="formErrors.options || formErrors.title || incomplete">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" id="incomplete-cont">
+            <div class="error col-8" *ngIf="incomplete">{{incomplete}}</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="error col-8" *ngIf="errMsg">{{errMsg}}</div>
+        </div>
+    </form>
+</section>

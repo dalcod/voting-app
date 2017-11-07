@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    color: black;
+}
+.del-btn-cont {
+    margin-top: 80px;
+}
+.btn-cont {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+h2 {
+    text-align: center;
+    color: red;
+    margin-top: 40px;
+}
+.btn-outline-danger:hover, .btn-success:hover {
+    cursor: pointer;
+}
+.error {
+    background-color: #ff4646;
+    color: #790000;
+    padding-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 12px;
+}
+.http-error{
+    margin-top: 150px;
+    color: red;
+}

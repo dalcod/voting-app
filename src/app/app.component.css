@@ -1,0 +1,29 @@
+.center-text {
+    text-align: center;
+}
+.active{
+    text-decoration: underline;
+}
+h1 {
+    font-size: 3.4rem;
+    margin: 30px auto 40px auto;
+    color: #2d2d2d;
+}
+#nav div:hover {
+    cursor: pointer;
+}
+#nav div a {
+    color: black;
+}
+#nav {
+    font-size: 1.4rem;
+}
+#home {
+    border-left: 1px solid #2d2d2d;
+}
+#home, #sign, #log {
+    border-right: 1px solid #2d2d2d;
+}
+#home:hover, #sign:hover, #log:hover {
+    text-decoration: underline;
+}

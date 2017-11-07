@@ -1,0 +1,18 @@
+<div class="row justify-content-center" *ngIf="errMsg">
+    <h1 class="error">{{errMsg}}</h1>
+</div>
+<section *ngIf="!errMsg">
+    <h1>MyPolls</h1>
+    <div *ngIf="warning === true" class="row justify-content-center">
+        <h1 class="warning">You have not added any poll yet!</h1>
+    </div>
+    <div *ngIf="warning === false">
+        <li *ngFor="let poll of myPolls"
+            [routerLink]="['/mypolls/detail/', poll.id]"
+            class="row p-3 poll">
+            <span>{{poll.title}}</span>
+            <button class="btn delete justify-content-end" (click)="delete(poll); $event.stopPropagation()">x</button>
+        </li>
+    </div>
+</section>
+

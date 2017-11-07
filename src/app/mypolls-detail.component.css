@@ -1,0 +1,83 @@
+#poll-details h2{
+    margin-top: 50px;
+    text-align: center;
+}
+.votes{
+    display: inline-block;
+    margin: 20px 10px 20px 10px;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    padding: 10px
+}
+.votes li{
+    list-style-type: none;
+}
+.center{
+    display:inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.display-votes{
+    text-align: center;
+    position: relative;
+}
+.btn-cont{
+    margin-bottom: 50px;
+}
+.btn-back{
+    border-color: #2d2d2d;
+    color: #2d2d2d;
+}
+.btn-cont .btn:hover{
+    cursor: pointer;
+}
+.btn-back:hover{
+    background-color: white;
+    box-shadow:  0px 0px 2px 0px hsl(0, 0%, 26%);
+    cursor: pointer;
+}
+.btn-back:active{
+    box-shadow:  0px 0px 0px 0px hsl(0, 0%, 100%);
+}
+.delete {
+    position: absolute;
+    top: -15px;
+    font-weight: bold;
+    border: 1px solid #2d2d2d;
+    padding: 2px;
+}
+.delete:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.add-opt-cont{
+   text-align: center;
+}
+.add-option {
+    display: inline-block;
+    margin: 10px auto 27px auto;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    color: #2d2d2d;
+    padding: 8px 5px 10px 12px;
+}
+.add-option span {
+    height: inherit;
+    border-left-width: 1px;
+    border-left-color: #2d2d2d;
+    border-left-style: solid;
+    padding: 5px 10px 7px 14px;
+    margin-bottom: 4px;
+    margin-left: 7px;
+}
+.add-option span:hover {
+    cursor: pointer;
+}
+input {
+    margin-bottom: 25px;
+}
+.error {
+    margin-top: 150px; 
+    color: red;
+}

@@ -1,0 +1,50 @@
+h1 {
+    text-align: center; 
+    margin-top: 50px;
+    color: black;
+}
+
+.center-elem {
+    margin: 0 auto;
+}
+
+.poll:first-of-type {
+   margin-top: 40px; 
+}
+
+.poll {
+    position: relative;
+    border: 1px solid #2d2d2d;
+    margin-bottom: 6px;
+    color: #2d2d2d;
+    font-weight: bold;
+    text-align: center;
+}
+
+.poll span {
+    margin: 0 auto;
+}
+
+.poll:hover {
+    box-shadow: 0px 0px 3px 0px hsl(0, 0%, 35%);
+    cursor: pointer;
+}
+
+.delete {
+    border: 1px solid black;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-bottom: 120px;
+    background-color: white;
+}
+
+.delete:hover {
+    box-shadow: inset 0px 0px 2px 0px hsl(0, 0%, 20%); 
+    cursor: pointer;
+}
+.error {
+    text-align: center;
+    color: red;
+    margin-top: 150px;
+}

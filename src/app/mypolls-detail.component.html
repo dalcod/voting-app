@@ -1,0 +1,31 @@
+<div class="row justify-content-center" *ngIf="errMsg">
+    <h1 class="error">{{errMsg}}</h1>
+</div>
+<section *ngIf="poll && !errMsg" id="poll-details">
+    <h2>"{{poll.title}}" poll details!</h2>
+    <div class="btn-back-cont">
+        <button type="button" class="btn btn-outline-secondary btn-back" (click)="goBack()">Back</button>
+    </div>
+    <div>
+        <google-chart class="center" [data]="pieChartOptions"></google-chart>
+    </div>
+
+    <div class="display-votes">
+        <div *ngFor="let option of poll.options" class="votes" >
+            <li> {{option.name}}</li>
+            <li>Votes: <strong>{{option.votes}}</strong></li>
+            <li class="delete" (click)="delete(option.name)">Delete</li>
+        </div>
+    </div>
+    <div class="add-opt-cont">
+        <div class="add-option">Add Option <span (click)="show()">+</span></div>
+    </div>
+    <div *ngIf="hide === false" id="add-option-dropdown">
+        <div class="row justify-content-center" id="input-cont">
+            <input type="text" class="col-sm-4 form-control" placeholder="Add option..." [(ngModel)]="new_option" name="new_option">
+        </div>
+        <div class="row justify-content-center btn-cont">
+            <button class="btn btn-success" (click)="save()">Confirm</button>
+        </div>
+    </div>
+</section>

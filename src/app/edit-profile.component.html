@@ -1,0 +1,26 @@
+<div class="row justify-content-center" *ngIf="httpErr">
+    <h1 class="http-error">{{httpErr}}</h1>
+</div>
+<section *ngIf="!httpErr">
+    <h1>Edit Profile</h1>
+    <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit(editProfileForm.value)">
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-4">
+                <label for="username">Change username:</label>
+                <input type="text" class="form-control" id="username" requried formControlName="username">
+                <div class="error" *ngIf="formErrors.username">{{formErrors.username}}</div>
+            </div>
+        </div>
+        <div class="row justify-content-center btn-cont">
+            <button class="col-sm-2 btn btn-success" type="submit">Confirm</button>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4 error" *ngIf="errMsg">{{errMsg}}</div>
+        </div>
+    </form>
+    <hr />
+    <h2>Delete Profile</h2>
+    <div class="row justify-content-center del-btn-cont">
+        <button class="btn btn-outline-danger col-sm-2" routerLink="/delete-profile">Delete</button>
+    </div>
+</section>

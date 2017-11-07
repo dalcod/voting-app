@@ -1,0 +1,10 @@
+<div class="row justify-content-center" *ngIf="errMsg">
+    <h1 class="error">{{errMsg}}</h1>
+</div>
+<section *ngIf="!errMsg" id="polls">
+    <li *ngFor="let poll of myPolls"
+         [routerLink]="['/poll-detail', poll.id]"
+         class="row p-3 poll">
+    <span>{{poll.title}}</span>
+    </li>
+</section>
