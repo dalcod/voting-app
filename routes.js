@@ -46,8 +46,18 @@ router.post("/poll", passport.authenticate('jwt', {session: false}), function(re
 router.get("/poll-count", function(req, res, next){
     Count.find({}, function(err, count){
         if (err) return res.status(500).send(err);
-        if (count) {
-            res.json(count[0]);
+        if (count[0]) {
+            console.log(true)
+            return res.json(count[0]);
+        } else {
+            console.log(false)
+            var count = new Count({
+                count: 0
+            });
+            count.save(function(err, done){
+                if (err) return res.status(500).send(err);
+                return res.json({count: 0});
+            })
         }
     });
 });
