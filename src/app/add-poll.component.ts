@@ -54,7 +54,6 @@ export class AddPollComponent implements OnInit{
     public setOptions(options: any[]) {
         const optionFGs = options.map(option =>  new FormControl(option.name, Validators.pattern(/^[\w ,]+$/)));
         const optionFormArray = this.fb.array(optionFGs);
-        console.log(optionFGs)
         this.addPollForm.setControl('options', optionFormArray);
     }
 

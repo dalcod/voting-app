@@ -102,9 +102,7 @@ export class PollService {
     public getCount(): Promise<any> {
         return this.http.get('/poll-count')
             .toPromise()
-            .then(res => {
-            console.log(res.json())
-            return res.json()})
+            .then(res => res.json())
             .catch(this.handleError);
     }
 
